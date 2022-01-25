@@ -1,5 +1,8 @@
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 <script src="App.js"></script>
 <script type="text/x-template" id="upgrade-template">
+</head>
     <div class="upgrade">
       <span>{{amount | number_format}}:</span>
       <button @click="buy">${{cost | number_format}} {{name}}</button>
