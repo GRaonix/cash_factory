@@ -1,37 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-<script src="App.js"></script>
-<script type="text/x-template" id="upgrade-template">
-</head>
-    <div class="upgrade">
-      <span>{{amount | number_format}}:</span>
-      <button @click="buy">${{cost | number_format}} {{name}}</button>
-      <span class="upgrade-info">{{help}}</span>
-    </div>
-  </script>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue Incremental Game</title>
   
-  <div id="app">
-    <div id="stats">
-      <h3>Stats</h3>
-      <ul>
-        <li>${{clickrate | number_format}}/click</li>
-        <li>${{cash_per_second | number_format}}/sec</li>
-      </ul>
-    </div>
-    <button @click="do_click">+ ${{clickrate | number_format}}</button>
-    <h1>${{ cash | number_format }}</h1>
-    <div id="store">
-      <h3>Store</h3>
-      <ul>
-        <li>
-          <upgrade :title="'Tool'" :tooltip="'Double cash per click'" :cash="cash" :initial_cost="10" :increase="2.8" @purchase="charge" @upgrade='double_clickrate'></upgrade>
-        </li>
-        <li>
-          <upgrade :title="'Factory'" :tooltip="'+ $1 per sec'" :cash="cash" :initial_cost="30" :increase="1.15" @purchase="charge" @upgrade='increase_cash_sec'></upgrade>
-        </li>
-          <li>
-          <upgrade :title="'Factory'" :tooltip="'+ $10 per sec'" :cash="cash" :initial_cost="3000" :increase="1.20" @purchase="charge" @upgrade='increase_cash_sec_by_ten'></upgrade>
-        </li>
-      </ul>
-    </div>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script type="text/x-template" id="upgrade-template">
+  <div class="upgrade">
+    <span>{{amount | number_format}}:</span>
+    <button @click="buy">${{cost | number_format}} {{name}}</button>
+    <span class="upgrade-info">{{help}}</span>
   </div>
+</script>
+
+<div id="app">
+  <div id="stats">
+    <h3>Stats</h3>
+    <ul>
+      <li>${{clickrate | number_format}}/click</li>
+      <li>${{cash_per_second | number_format}}/sec</li>
+    </ul>
+  </div>
+  <button @click="do_click">+ ${{clickrate | number_format}}</button>
+  <h1>${{ cash | number_format }}</h1>
+  <div id="store">
+    <h3>Store</h3>
+    <ul>
+      <li>
+        <upgrade :title="'Tool'" :tooltip="'Double cash per click'" :cash="cash" :initial_cost="10" :increase="2.8" @purchase="charge" @upgrade='double_clickrate'></upgrade>
+      </li>
+      <li>
+        <upgrade :title="'Factory'" :tooltip="'+ $1 per sec'" :cash="cash" :initial_cost="30" :increase="1.15" @purchase="charge" @upgrade='increase_cash_sec'></upgrade>
+      </li>
+        <li>
+        <upgrade :title="'Factory'" :tooltip="'+ $10 per sec'" :cash="cash" :initial_cost="3000" :increase="1.20" @purchase="charge" @upgrade='increase_cash_sec_by_ten'></upgrade>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
+<script src='https://cdn.rawgit.com/erosson/swarm-numberformat/v0.1.0/dist/swarm-numberformat.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
