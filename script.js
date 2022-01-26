@@ -2,7 +2,7 @@ Vue.component('upgrade', {
   props: ['cash', 'initial_cost', 'increase', 'title', 'tooltip'],
   data: function() {
   	return {
-    	//cost: this.initial_cost,
+    	
       cost_increase: this.increase,
       base_cost: this.initial_cost,
       amount: 0,
