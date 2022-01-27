@@ -63,6 +63,9 @@ vm = new Vue({
     increase_cash_sec_by_ten: function() {
       this.cps_units += 10;
     },
+    increase_cash_sec_by_hundred: function() {
+      this.cps_units += 100;
+    },
     do_click: function() {
       this.cash += this.clickrate;
     }

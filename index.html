@@ -26,6 +26,7 @@
     </ul>
   </div>
   <button @click="do_click">+ ${{clickrate | number_format}}</button>
+  
   <h1>${{ cash | number_format }}</h1>
   <div id="store">
     <h3>Store</h3>
@@ -38,6 +39,9 @@
       </li>
         <li>
         <upgrade :title="'Factory'" :tooltip="'+ $10 per sec'" :cash="cash" :initial_cost="3000" :increase="1.20" @purchase="charge" @upgrade='increase_cash_sec_by_ten'></upgrade>
+      </li>
+      <li>
+        <upgrade :title="'Giga Factory'" :tooltip="'+ $100 per sec'" :cash="cash" :initial_cost="30000" :increase="1.20" @purchase="charge" @upgrade='increase_cash_sec_by_hundred'></upgrade>
       </li>
     </ul>
   </div>
